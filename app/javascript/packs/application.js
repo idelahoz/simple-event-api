@@ -15,12 +15,16 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
-
 import React from 'react';
 import { render } from 'react-dom';
 import App from '../components/App';
+import { BrowserRouter } from 'react-router-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
-  render(<App />, document.querySelector('#root'));
+  render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+
+    document.querySelector('#root'));
 });

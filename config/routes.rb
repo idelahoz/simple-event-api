@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  root "site#index"
+  root to: redirect('/events')
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'events', to: 'site#index'
+  get 'events/new', to: 'site#index'
+  get 'events/:id', to: 'site#index'
+  get 'events/:id/edit', to: 'site#index'
+
   namespace :api, defaults: {format: :json} do
     resources :events
   end
